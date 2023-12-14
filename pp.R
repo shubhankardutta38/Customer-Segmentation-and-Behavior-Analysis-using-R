@@ -4,17 +4,14 @@ library(tidyverse)
 library(cluster)
 library(ggplot2)
 
-# Load your dataset (replace 'your_dataset.csv' with your actual dataset file)
 customer_data <- read.csv("/Users/shubhankardutta/Downloads/Mall_Customers.csv")
 
-# Explore the dataset (optional)
+# Explore the dataset 
 summary(customer_data)
 str(customer_data)
 
 # Remove leading and trailing spaces from column names
 colnames(customer_data) <- trimws(colnames(customer_data))
-# Print the column names
-print(colnames(customer_data))
 
 # Select relevant columns for clustering (adjust based on your dataset)
 selected_columns <- customer_data[, c("Age", "Annual.Income..k..", "Spending.Score..1.100."), drop = FALSE]
